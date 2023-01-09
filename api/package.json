@@ -20,7 +20,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@simplewebauthn/typescript-types": "^6.2.1",
+    "@simplewebauthn/typescript-types": "^7.0.0",
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.15",
