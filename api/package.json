@@ -7,7 +7,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@simplewebauthn/server": "^6.2.2",
+    "@simplewebauthn/server": "^7.0.0",
     "base64url": "^3.0.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
