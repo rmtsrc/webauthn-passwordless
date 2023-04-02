@@ -6,7 +6,7 @@ const feedbackTxt: HTMLParagraphElement | null = document.querySelector('#feedba
 /**
  * Authentication via email & passkey
  */
-const login = async (email?: string) => {
+const login = async (email?: string, passphraseAttempt?: string) => {
   if (!feedbackTxt) {
     return;
   }
@@ -15,7 +15,9 @@ const login = async (email?: string) => {
   feedbackTxt.innerText = '';
 
   try {
-    const authenticationOptions = email ? { email, emailLoginLinkOnFailure: true } : {};
+    const authenticationOptions = email
+      ? { email, emailLoginLinkOnFailure: true, passphraseAttempt }
+      : {};
     const authenticationResult = await authenticate(authenticationOptions);
     if (authenticationResult.verified) {
       (window as Window).location = 'account.html';
@@ -36,9 +38,10 @@ loginForm?.addEventListener('submit', async (e) => {
     throw new Error('Fill out the form');
   }
 
-  const email = (document.querySelector('#email') as HTMLInputElement)?.value;
+  const email = (document.querySelector('#email') as HTMLInputElement | null)?.value;
+  const passphrase = (document.querySelector('#passphrase') as HTMLInputElement | null)?.value;
 
-  await login(email);
+  await login(email, passphrase);
 });
 
 document.querySelector('#loginWithKey')?.addEventListener('click', async (e) => {
