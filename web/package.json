@@ -10,7 +10,7 @@
     "@simplewebauthn/browser": "^7.2.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.4"
+    "typescript": "^5.9.3"
   },
   "repository": {
     "type": "git",
